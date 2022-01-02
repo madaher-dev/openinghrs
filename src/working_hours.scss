@@ -1,0 +1,116 @@
+/* working hours component */
+.working-hours {
+  border-collapse: collapse;
+  width: auto;
+}
+
+/* headers */
+.hours {
+  td {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 0;
+  }
+  .header {
+    width: 12px;
+    max-width: 12px !important;
+    span {
+      font-size: 10px;
+      display: block;
+      overflow: hidden;
+    }
+  }
+  .part {
+    text-align: center;
+    span {
+      font-size: 7px;
+      display: block;
+      overflow: hidden;
+    }
+  }
+}
+
+/* individual days */
+.day {
+  td {
+    height: 25px;
+    padding: 0;
+  }
+  .day-name {
+    padding: 0px 10px 0px 0px;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  .reset {
+    padding-left: 10px;
+    vertical-align: middle;
+  }
+
+  /* time cells */
+  .time-cell {
+    border: 1px solid silver;
+    cursor: pointer;
+  }
+  .time-cell.selected {
+    background-color: #007bff;
+  }
+  .time-cell.hour {
+    border-right: 1px solid #e0e0e0;
+  }
+  .time-cell.half {
+    border-left: 1px solid #e0e0e0;
+  }
+
+  /* overlay showing selected timespans */
+  .timespan-container {
+    position: relative;
+    width: 0;
+    height: 0;
+    padding: 0;
+    .timespan-overlay {
+      position: absolute;
+      height: 15px;
+      width: 490px;
+      left: 80px;
+      text-align: center;
+      vertical-align: middle;
+      color: black;
+      pointer-events: none;
+      .timespan {
+        opacity: 1;
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 0px 3px;
+        color: white;
+        background-color: #6bb2ff;
+      }
+    }
+  }
+}
+
+/* reset all feature */
+.reset-all {
+  text-align: right;
+  padding-right: 0px;
+  padding-top: 10px;
+  .working-hours-reset {
+    margin-right: 0px;
+  }
+}
+
+/* admin only styles */
+.working-hours {
+  .time-cell.selected {
+    background-color: #5e6469;
+  }
+  .timespan-container {
+    .timespan-overlay {
+      .timespan {
+        background-color: #6fc1ff;
+      }
+    }
+  }
+  button.working-hours-reset {
+    padding: 3px 5px;
+  }
+}
